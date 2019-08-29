@@ -16,4 +16,10 @@ RUN wget --quiet https://repo.anaconda.com/archive/Anaconda3-2019.07-Linux-x86_6
 
 RUN /opt/conda/bin/conda init bash
 
+ENV PATH /opt/conda/bin:$PATH
+
+RUN mkdir /work && mkdir /jenkins
+
+WORKDIR /work
+
 SHELL ["/bin/bash", "-c"]
